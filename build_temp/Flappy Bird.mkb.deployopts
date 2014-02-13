@@ -1,0 +1,5 @@
+build "ARM GCC Debug"
+outdir "C:/Users/Daniel/Documents/Quick/Projects/Flappy Bird/build_temp"
+!config !name "Default"
+!config <os>
+configlist "Default",

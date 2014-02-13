@@ -1,0 +1,64 @@
+#!/usr/bin/env mkb
+
+# Quick Project
+
+if {{ option use_prebuilt }}
+{
+    subproject "$MARMALADE_ROOT/quick/quick_prebuilt"
+}
+else
+{
+    subproject "$MARMALADE_ROOT/quick/quick"
+}
+
+options
+{
+    s3e-data-dir = resources
+    app-icf = 'resources/common.icf,resources/app.icf'
+}
+
+files
+{
+    (resources)
+    app.icf
+    main.lua
+}
+
+assets
+{
+    (resources)
+    .
+}
+
+deployments
+{
+    ["Windows"]
+    win32
+    arch=x86
+
+    ["Mac OS X"]
+    osx
+    arch=x86
+
+    # Ensure subsequent options set on "Default" configuration
+    ["Default"]
+}
+
+options
+{
+    builddir = build_temp
+}
+
+#### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
+
+deployments
+{
+    blackberry-author = "Daniel Williamson"
+    iphone-enable-4inch-retina = "1"
+    name = "Happy Bird"
+    provider = "Daniel Williamson"
+    splashscreen-auto-onblack = "0"
+    version-major = "0"
+    version-minor = "0"
+    version-revision = "1"
+}
